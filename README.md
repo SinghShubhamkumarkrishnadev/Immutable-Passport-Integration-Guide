@@ -6,13 +6,13 @@ Immutable Passport is a powerful tool for managing user authentication and enabl
 ## Table of Contents
 
 1. [Prerequisites](#prerequisites)
-2. [Step 1:Creating or Cloning Your Application](#creating-or-cloning-your-application)
-3. [Step 2:Registering the Application on Immutable Developer Hub](#registering-your-application)
-4. [Step 3:Installing and Initializing the Passport Client](#installing-and-initializing-passport)
-5. [Step 4:Logging In a User with Passport](#logging-in-a-user)
-6. [Step 5:Displaying User Information](#displaying-user-information)
-7. [step 6:Logging Out a User](#logging-out-a-user)
-8. [Step 7:Initiating a Transaction with Passport](#initiating-a-transaction)
+2. [Step 1: Creating or Cloning Your Application](#step-1-creating-or-cloning-your-application)
+3. [Step 2: Registering Your Application on Immutable Developer Hub](#step-2-registering-your-application-on-immutable-developer-hub)
+4. [Step 3: Installing and Initializing the Passport Client](#step-3-installing-and-initializing-the-passport-client)
+5. [Step 4: Logging In a User with Passport](#step-4-logging-in-a-user-with-passport)
+6. [Step 5: Displaying User Information](#step-5-displaying-user-information)
+7. [Step 6: Logging Out a User](#step-6-logging-out-a-user)
+8. [Step 7: Initiating a Transaction with Passport](#step-7-initiating-a-transaction-with-passport)
 9. [conclusion](#conclusion)
 
 ## Prerequisites
