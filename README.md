@@ -1,4 +1,4 @@
-# Immutable Passport Integration Guide
+# Immutable-Passport-Integration-Guide
 
 Here is a guide which will walk you through the process of integrating Immutable Passport into your application. 
 Immutable Passport is a powerful tool for managing user authentication and enabling blockchain transactions.
