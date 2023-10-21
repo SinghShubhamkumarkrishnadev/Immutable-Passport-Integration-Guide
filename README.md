@@ -13,7 +13,7 @@ Immutable Passport is a powerful tool for managing user authentication and enabl
 6. [Step 5:Displaying User Information](#displaying-user-information)
 7. [step 6:Logging Out a User](#logging-out-a-user)
 8. [Step 7:Initiating a Transaction with Passport](#initiating-a-transaction)
-9. [Conclusion](https://github.com/SinghShubhamkumarkrishnadev/Immutable-Passport-Integration-Guide/edit/main/README.md#conclusion)
+9. [Conclusion](#conclusion)
 
 ## Prerequisites
 
