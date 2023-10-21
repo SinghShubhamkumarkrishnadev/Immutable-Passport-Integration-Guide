@@ -4,7 +4,7 @@ Here is a guide which will walk you through the process of integrating Immutable
 Immutable Passport is a powerful tool for managing user authentication and enabling blockchain transactions.
 
 ## Table of Contents
-1. [Introduction](https://github.com/SinghShubhamkumarkrishnadev/Immutable-Passport-Integration-Guide/edit/main/README.md#introduction)
+1. [Introduction](https://github.com/Amar5623/Immutable-Passport-Integration-Guide/blob/main/README.md#introduction)
 2. [Prerequisites](#prerequisites)
 3. [Step 1: Creating or Cloning Your Application](#step-1-creating-or-cloning-your-application)
 4. [Step 2: Registering Your Application on Immutable Developer Hub](#step-2-registering-your-application-on-immutable-developer-hub)
