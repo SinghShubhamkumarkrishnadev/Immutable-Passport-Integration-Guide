@@ -23,7 +23,7 @@ Before you begin, make sure you have the following:
 - An Immutable Developer Hub account.
 - Your application's repository or a new application project.
 
-## Step 1: Creating a Simple Application
+## Step 1: Creating or Cloning Your Application
 
 You can start by creating a new application from scratch or by cloning an existing repository that has a basic application structure.
 
