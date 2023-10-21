@@ -81,7 +81,7 @@ cd your-existing-app
           console.log(`Server is running on port ${port}`);
             });
 ```
-## Step 2:Registering the Application on Immutable Developer Hub
+## Step 2: Registering Your Application on Immutable Developer Hub
 
 1. Visit the [Immutable-Developer-Hub](https://docs.immutable.com//).
 2. Goto Home->products->Passport->setuop->Register your application.
@@ -91,7 +91,7 @@ cd your-existing-app
 6. now goto passport and add client by providing necessary details. 
 3. Upon registration, you'll receive your client ID and client secret.
 
-## step 3:Installing and Initializing the Passport Client
+## Step 3: Installing and Initializing the Passport Client
 
 Install the Passport client library and initialize it in your application.
 
@@ -111,7 +111,7 @@ npm install immutable-passport-client --save
           clientSecret: 'your-client-secret',
                     });
 ```
-## step 4:Logging in a User with Passport
+## Step 4: Logging In a User with Passport
 
   Implement user login functionality in your Shubham.js file. This typically involves creating a login route, handling user credentials, and using the Passport client to initiate the login process. copy the below code and paste it into your Shubham.js file:
        
@@ -126,7 +126,7 @@ npm install immutable-passport-client --save
                    }
                    });
 ```
-## step 5:Displaying User Information
+## Step 5: Displaying User Information
 
   After a successful login, you can display user information, including the ID token, access token, and user's nickname.for that copy the below code and paste it into shubham.js file:
 
@@ -140,7 +140,7 @@ npm install immutable-passport-client --save
            });
          });
 ```
-## step 6:Logging Out a User
+## Step 6: Logging Out a User
 
   Implement a user logout feature in your Express.js application(Shubham.js). This route can clear the user's session or token:
 ```bash
@@ -149,7 +149,7 @@ npm install immutable-passport-client --save
             res.redirect('/');
            });
 ```
-## step 7:Initiating a Transaction from Passport
+## Step 7: Initiating a Transaction with Passport
 
  Use Passport to initiate a blockchain transaction from your Express.js application(Shubham.js):
 ```bash
