@@ -42,27 +42,27 @@ You can start by creating a new application from scratch or by cloning an existi
 **Creating a New Simple Application:**
 
 ### Create a new directory for your project 
-```bash
+```cmd
 mkdir shubham-passport-integration-app
 cd shubham-passport-integration-app
 ```
 
 ### Initialize a new Node.js project 
-```bash
+```cmd
 npm init -y
 ```
 
 ### Install express.js to your project 
-```bash
+```cmd
 npm install express --save
 ```
 
 ### Create the Main Application File 
-```bash
+```cmd
 touch Shubham.js
 ```
 # Clone your existing application from a Git repository
-```bash
+```cmd
 git clone <repository-url>
 cd your-existing-app
 ```
