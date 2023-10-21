@@ -12,7 +12,7 @@ Immutable Passport is a powerful tool for managing user authentication and enabl
 5. [Step 4:Logging In a User with Passport](#logging-in-a-user)
 6. [Step 5:Displaying User Information](#displaying-user-information)
 7. [step 6:Logging Out a User](#logging-out-a-user)
-8. [Step 7:Initiating a Transaction with Passport](#initiating-a-transaction)
+8. [Step 7:Initiating a Transaction with Passport](#initiating-a-transaction-with-passport)
 9. [Conclusion](#conclusion)
 
 ## Prerequisites
@@ -23,7 +23,7 @@ Before you begin, make sure you have the following:
 - An Immutable Developer Hub account.
 - Your application's repository or a new application project.
 
-## Step 1: Creating or Cloning Your Application
+## Step 1:Creating or Cloning Your Application
 
 You can start by creating a new application from scratch or by cloning an existing repository that has a basic application structure.
 
@@ -70,7 +70,7 @@ cd your-existing-app
             });
 ```
 
-## Step 2: Registering the Application on Immutable Developer Hub
+## Step 2:Registering Your Application on Immutable Developer Hu
 
 1. Visit the [Immutable-Developer-Hub](https://docs.immutable.com//).
 2. Goto Home->products->Passport->setuop->Register your application.
@@ -80,7 +80,7 @@ cd your-existing-app
 6. now goto passport and add client by providing necessary details. 
 3. Upon registration, you'll receive your client ID and client secret.
 
-## step 3:Installing and Initializing the Passport Client
+## Step 3:Installing and Initializing the Passport Client
 
 Install the Passport client library and initialize it in your application.
 
@@ -101,7 +101,7 @@ npm install immutable-passport-client --save
                     });
 ```
 
-## step 4:Logging in a User with Passport
+## Step 4:Logging In a User with Passport
 
  ** Implement user login functionality in your Shubham.js file. This typically involves creating a login route, handling user credentials, and using the Passport client to initiate the login process. copy the below code and paste it into your Shubham.js file:
 
@@ -117,7 +117,7 @@ npm install immutable-passport-client --save
                    });
 ```
 
-## step 5:Displaying User Information
+## Step 5:Displaying User Information
 
  ** After a successful login, you can display user information, including the ID token, access token, and user's nickname.for that copy the below code and paste it into shubham.js file:
 
@@ -142,7 +142,7 @@ npm install immutable-passport-client --save
            });
 ```
 
-## step 7:Initiating a Transaction from Passport
+## Step 7:Initiating a Transaction with Passport
 
 ** Use Passport to initiate a blockchain transaction from your Express.js application(Shubham.js):
 ```
