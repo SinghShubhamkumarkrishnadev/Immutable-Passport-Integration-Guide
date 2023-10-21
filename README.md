@@ -13,6 +13,7 @@ Immutable Passport is a powerful tool for managing user authentication and enabl
 6. [Step 5:Displaying User Information](#displaying-user-information)
 7. [step 6:Logging Out a User](#logging-out-a-user)
 8. [Step 7:Initiating a Transaction with Passport](#initiating-a-transaction)
+9. [Conclusion](https://github.com/SinghShubhamkumarkrishnadev/Immutable-Passport-Integration-Guide/edit/main/README.md#conclusion)
 
 ## Prerequisites
 
@@ -30,29 +31,29 @@ You can start by creating a new application from scratch or by cloning an existi
 
 ### Create a new directory for your project ###
 ```bash
--mkdir shubham-passport-integration-app
--cd shubham-passport-integration-app
+mkdir shubham-passport-integration-app
+cd shubham-passport-integration-app
 ```
 
 ### Initialize a new Node.js project ###
 ```
--npm init -y
+npm init -y
 ```
 
 ### Install express.js to your project ###
 ```
--npm install express --save
+npm install express --save
 ```
 
 ### Create the Main Application File ###
 ```
--touch Shubham.js
+touch Shubham.js
 ```
 
 ### Clone your existing application from a Git repository ###
 ```
--git clone <repository-url>
--cd your-existing-app
+git clone <repository-url>
+cd your-existing-app
 ```
 
 ### Initialize Express.js in Your Application ###
@@ -86,21 +87,25 @@ Install the Passport client library and initialize it in your application.
 **Install the Passport client**
 
 ```bash
--npm install immutable-passport-client --save
+npm install immutable-passport-client --save
+```
 
 ** In your application code(Shubham.js) file, initialize the Passport client with the client ID and client secret which you have saved earlier in passport client creation. copy the below code and paste it into shubham.js file **
 
+```
       const passport = require('immutable-passport-client');
 
        passport.init({
           clientId: 'your-client-id',
           clientSecret: 'your-client-secret',
                     });
+```
 
 ## step 4:Logging in a User with Passport
 
  ** Implement user login functionality in your Shubham.js file. This typically involves creating a login route, handling user credentials, and using the Passport client to initiate the login process. copy the below code and paste it into your Shubham.js file:
-       
+
+```
         app.post('/login', async (req, res) => {
            const { username, password } = req.body;
               try {
@@ -110,11 +115,13 @@ Install the Passport client library and initialize it in your application.
                 res.status(401).json({ error: 'Login failed' });
                    }
                    });
+```
 
 ## step 5:Displaying User Information
 
  ** After a successful login, you can display user information, including the ID token, access token, and user's nickname.for that copy the below code and paste it into shubham.js file:
-  
+
+  ```
         app.get('/profile', (req, res) => {
            const user = req.user; 
            res.json({
@@ -123,20 +130,22 @@ Install the Passport client library and initialize it in your application.
              nickname: user.nickname,
            });
          });
+```
 
 ## step 6:Logging Out a User
 
  ** Implement a user logout feature in your Express.js application(Shubham.js). This route can clear the user's session or token:
-
+```
        app.get('/logout', (req, res) => {
             req.session.user = null;
             res.redirect('/');
            });
+```
 
 ## step 7:Initiating a Transaction from Passport
 
 ** Use Passport to initiate a blockchain transaction from your Express.js application(Shubham.js):
-
+```
           app.post('/transaction', async (req, res) => {
             const { data } = req.body;
 
@@ -147,7 +156,7 @@ Install the Passport client library and initialize it in your application.
               res.status(500).json({ error: 'Transaction initiation failed' });
             }
           });
-
+```
 
 
 ## Conclusion 
