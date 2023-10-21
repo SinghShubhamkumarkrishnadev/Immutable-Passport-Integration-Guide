@@ -1,19 +1,31 @@
 # Immutable Passport Integration Guide
 
-This guide will walk you through the process of integrating Immutable Passport into your application. 
+Here is a guide which will walk you through the process of integrating Immutable Passport into your application. 
 Immutable Passport is a powerful tool for managing user authentication and enabling blockchain transactions.
 
 ## Table of Contents
+1. [Introduction](https://github.com/SinghShubhamkumarkrishnadev/Immutable-Passport-Integration-Guide/edit/main/README.md#introduction)
+2. [Prerequisites](#prerequisites)
+3. [Step 1: Creating or Cloning Your Application](#step-1-creating-or-cloning-your-application)
+4. [Step 2: Registering Your Application on Immutable Developer Hub](#step-2-registering-your-application-on-immutable-developer-hub)
+5. [Step 3: Installing and Initializing the Passport Client](#step-3-installing-and-initializing-the-passport-client)
+6. [Step 4: Logging In a User with Passport](#step-4-logging-in-a-user-with-passport)
+7. [Step 5: Displaying User Information](#step-5-displaying-user-information)
+8. [Step 6: Logging Out a User](#step-6-logging-out-a-user)
+9. [Step 7: Initiating a Transaction with Passport](#step-7-initiating-a-transaction-with-passport)
+10. [conclusion](#conclusion)
 
-1. [Prerequisites](#prerequisites)
-2. [Step 1: Creating or Cloning Your Application](#step-1-creating-or-cloning-your-application)
-3. [Step 2: Registering Your Application on Immutable Developer Hub](#step-2-registering-your-application-on-immutable-developer-hub)
-4. [Step 3: Installing and Initializing the Passport Client](#step-3-installing-and-initializing-the-passport-client)
-5. [Step 4: Logging In a User with Passport](#step-4-logging-in-a-user-with-passport)
-6. [Step 5: Displaying User Information](#step-5-displaying-user-information)
-7. [Step 6: Logging Out a User](#step-6-logging-out-a-user)
-8. [Step 7: Initiating a Transaction with Passport](#step-7-initiating-a-transaction-with-passport)
-9. [conclusion](#conclusion)
+## Introduction
+This guide will walk you through the process of integrating Immutable Passport into your application. The guide will cover the following topics:
+
+1. Creating or Cloning Your Application
+2. Registering Your Application on Immutable Developer Hub
+3. Installing and Initializing the Passport Client
+4. Logging In a User with Passport
+5. Displaying User Information
+6. Logging Out a User
+7. Initiating a Transaction with Passport
+
 
 ## Prerequisites
 
