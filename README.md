@@ -102,7 +102,7 @@ Install the Passport client library and initialize it in your application.
 ```bash
 npm install @imtbl/sdk ethers
 ```
-## Create A component folder within root directory
+Now Create a folder named component within root directory
 
 ## Step 4: Logging In a User with Passport
 
