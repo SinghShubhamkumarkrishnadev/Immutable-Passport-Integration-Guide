@@ -43,8 +43,8 @@ You can start by creating a new application from scratch or by cloning an existi
 
 ### Create a new directory for your project 
 ```cmd
-npx create-next-app your-immutable-app
-cd your-immutable-app
+npx create-next-app shubham-immutable-app
+cd shubham-immutable-app
 ```
 
 ### Install express.js to your project 
@@ -65,7 +65,7 @@ Now, create a new file in the project's lib directory called shubham.js. This fi
 
 ```javascript
    const express = require('express');
-// lib/shubham.js
+
 import { passport } from "@imtbl/sdk";
 import { ethers } from "ethers";
 
@@ -178,7 +178,7 @@ export default UserProfile;
 
   Create a file logout.js file in component folder for logging out: This route can clear the user's session or token:
 ```javascript
-    // components/Logout.js
+// components/Logout.js
 import { passportInstance } from "../lib/shubham";
 
 const Logout = () => {
