@@ -43,44 +43,46 @@ You can start by creating a new application from scratch or by cloning an existi
 
 ### Create a new directory for your project 
 ```cmd
-mkdir shubham-passport-integration-app
-cd shubham-passport-integration-app
-```
-
-### Initialize a new Node.js project 
-```cmd
-npm init -y
+npx create-next-app your-immutable-app
+cd your-immutable-app
 ```
 
 ### Install express.js to your project 
 ```cmd
 npm install express --save
+npm install @imtbl/sdk ethers
 ```
 
-### Create the Main Application File 
-```cmd
-touch Shubham.js
-```
 # Clone your existing application from a Git repository
 ```cmd
 git clone <repository-url>
 cd your-existing-app
 ```
 
-### Initialize Express.js in Your Application 
- In your Shubham.js  file, you need to require and initialize Express.js. You can do this by adding the following lines of code:
+### Initialize next.js in Your Application 
+
+Now, create a new file in the project's lib directory called immutable.js. This file will contain the configuration and initialization code for the Passport client.
 
 ```javascript
    const express = require('express');
-     const app = express();
-     const session = require('express-session');
-     const passport = require('immutable-passport-client');
-     const port = process.env.PORT || 3000; 
+// lib/immutable.js
+import { passport } from "@imtbl/sdk";
+import { ethers } from "ethers";
 
-          app.listen(port, () => {
-          console.log(`Server is running on port ${port}`);
-            });
+const passportConfig = {
+  clientId: process.env.IMMUTABLE_CLIENT_ID,
+  redirectUri: "http://localhost:3000/callback",
+  logoutRedirectUri: "http://localhost:3000/",
+  scope: "transact openid offline_access email",
+  audience: "platform_api",
+};
+
+const passportInstance = new passport.Passport(passportConfig);
+const passportProvider = passportInstance.connectEvm();
+
+export { passportInstance, passportProvider };
 ```
+
 ## Step 2: Registering Your Application on Immutable Developer Hub
 
 1. Visit the [Immutable-Developer-Hub](https://docs.immutable.com//).
@@ -89,7 +91,7 @@ cd your-existing-app
 4. create new passport or log in if you have already.
 5. create a project and navigate to it.
 6. now goto passport and add client by providing necessary details. 
-3. Upon registration, you'll receive your client ID and client secret.
+3. Upon registration, you'll receive your client ID .
 
 ## Step 3: Installing and Initializing the Passport Client
 
@@ -98,71 +100,132 @@ Install the Passport client library and initialize it in your application.
 **Install the Passport client**
 
 ```bash
-npm install immutable-passport-client --save
+npm install @imtbl/sdk ethers
 ```
 
- In your application code(Shubham.js) file, initialize the Passport client with the client ID and client secret which you have saved earlier in passport client creation. copy the below code and paste it into shubham.js file 
-
-```javascript
-      const passport = require('immutable-passport-client');
-
-       passport.init({
-          clientId: 'your-client-id',
-          clientSecret: 'your-client-secret',
-                    });
-```
 ## Step 4: Logging In a User with Passport
 
-  Implement user login functionality in your Shubham.js file. This typically involves creating a login route, handling user credentials, and using the Passport client to initiate the login process. copy the below code and paste it into your Shubham.js file:
+ Create a component for login in the components directory:
        
    ```javascript
-        app.post('/login', async (req, res) => {
-           const { username, password } = req.body;
-              try {
-                const user = await passport.login(username, password);
-               res.json(user);
-                   } catch (error) {
-                res.status(401).json({ error: 'Login failed' });
-                   }
-                   });
+// components/LoginButton.js
+import { passportProvider } from "../lib/immutable";
+
+const LoginButton = () => {
+  const handleLogin = async () => {
+    try {
+      const accounts = await passportProvider.request({
+        method: "eth_requestAccounts",
+      });
+      console.log("Connected");
+      console.log(accounts);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  return (
+    <button onClick={handleLogin}>Log In</button>
+  );
+};
+
+export default LoginButton;
 ```
 ## Step 5: Displaying User Information
 
-  After a successful login, you can display user information, including the ID token, access token, and user's nickname.for that copy the below code and paste it into shubham.js file:
+Create a component for displaying user information:
 
   ```javascript
-        app.get('/profile', (req, res) => {
-           const user = req.user; 
-           res.json({
-             id: user.id,
-             accessToken: user.accessToken,
-             nickname: user.nickname,
-           });
-         });
+// components/UserProfile.js
+import { passportInstance } from "../lib/immutable";
+import { useEffect, useState } from "react";
+
+const UserProfile = () => {
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    const fetchUser = async () => {
+      try {
+        const userProfile = await passportInstance.getUserInfo();
+        setUser(userProfile);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+
+    fetchUser();
+  }, []);
+
+  return (
+    <div>
+      {user ? (
+        <div>
+          <h2>User Profile</h2>
+          <pre>{JSON.stringify(user, null, 2)}</pre>
+        </div>
+      ) : (
+        <p>Loading user data...</p>
+      )}
+    </div>
+  );
+};
+
+export default UserProfile;
+
 ```
 ## Step 6: Logging Out a User
 
-  Implement a user logout feature in your Express.js application(Shubham.js). This route can clear the user's session or token:
+  Create a component for logging out: This route can clear the user's session or token:
 ```javascript
-       app.get('/logout', (req, res) => {
-            req.session.user = null;
-            res.redirect('/');
-           });
+    // components/LogoutButton.js
+import { passportInstance } from "../lib/immutable";
+
+const LogoutButton = () => {
+  const handleLogout = () => {
+    passportInstance.logout();
+  };
+
+  return (
+    <button onClick={handleLogout}>Log Out</button>
+  );
+};
+
+export default LogoutButton;
+
 ```
 ## Step 7: Initiating a Transaction with Passport
 
- Use Passport to initiate a blockchain transaction from your Express.js application(Shubham.js):
+Create a component for initiating a transaction:
 ```javascript
-          app.post('/transaction', async (req, res) => {
-            const { data } = req.body;
+// components/Transaction.js
+import { passportProvider, initiateTransaction } from "../lib/immutable";
 
-            try {
-              const transactionHash = await passport.initiateTransaction(data);
-              res.json({ transactionHash });
-            } catch (error) {
-              res.status(500).json({ error: 'Transaction initiation failed' });
-            }
-          });
+const Transaction = () => {
+  const handleTransaction = async (data) => {
+    try {
+      const transactionHash = await initiateTransaction({ data });
+      console.log("Transaction Hash:", transactionHash);
+      // Handle the transaction response
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  return (
+    <button onClick={() => handleTransaction({ /* Transaction data */ })}>
+      Initiate Transaction
+    </button>
+  );
+};
+
+export default Transaction;
+```
+### Adding Components to Pages
+Now, you can add these components to your Next.js pages or any other components as needed. For example, you might create a pages/index.js file that includes the login, user profile, logout, and transaction components.
+
+You can now run your Next.js application using the following command:
+``` bash
+npm run dev
 ```
 
 
