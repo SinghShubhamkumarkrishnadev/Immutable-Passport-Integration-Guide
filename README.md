@@ -31,7 +31,7 @@ This guide will walk you through the process of integrating Immutable Passport i
 
 Before you begin, make sure you have the following:
 
-- Node.js and npm installed on your machine.
+- Node.js,next.js and npm installed on your machine.
 - An Immutable Developer Hub account.
 - Your application's repository or a new application project.
 
@@ -61,11 +61,11 @@ cd your-existing-app
 
 ### Initialize next.js in Your Application 
 
-Now, create a new file in the project's lib directory called immutable.js. This file will contain the configuration and initialization code for the Passport client.
+Now, create a new file in the project's lib directory called shubham.js. This file will contain the configuration and initialization code for the Passport client.
 
 ```javascript
    const express = require('express');
-// lib/immutable.js
+// lib/shubham.js
 import { passport } from "@imtbl/sdk";
 import { ethers } from "ethers";
 
@@ -102,16 +102,17 @@ Install the Passport client library and initialize it in your application.
 ```bash
 npm install @imtbl/sdk ethers
 ```
+## Create A component folder within root directory
 
 ## Step 4: Logging In a User with Passport
 
- Create a component for login in the components directory:
+ In a component folder create a Login.js file for login function:
        
    ```javascript
-// components/LoginButton.js
-import { passportProvider } from "../lib/immutable";
+//component/Login.js
+import { passportProvider } from "../lib/shubham";
 
-const LoginButton = () => {
+const Login = () => {
   const handleLogin = async () => {
     try {
       const accounts = await passportProvider.request({
@@ -129,15 +130,15 @@ const LoginButton = () => {
   );
 };
 
-export default LoginButton;
+export default Login;
 ```
 ## Step 5: Displaying User Information
 
-Create a component for displaying user information:
+Create a file UserProfile.js in component folder for displaying user information:
 
   ```javascript
 // components/UserProfile.js
-import { passportInstance } from "../lib/immutable";
+import { passportInstance } from "../lib/shubham";
 import { useEffect, useState } from "react";
 
 const UserProfile = () => {
@@ -175,12 +176,12 @@ export default UserProfile;
 ```
 ## Step 6: Logging Out a User
 
-  Create a component for logging out: This route can clear the user's session or token:
+  Create a file logout.js file in component folder for logging out: This route can clear the user's session or token:
 ```javascript
-    // components/LogoutButton.js
-import { passportInstance } from "../lib/immutable";
+    // components/Logout.js
+import { passportInstance } from "../lib/shubham";
 
-const LogoutButton = () => {
+const Logout = () => {
   const handleLogout = () => {
     passportInstance.logout();
   };
@@ -190,15 +191,15 @@ const LogoutButton = () => {
   );
 };
 
-export default LogoutButton;
+export default Logout;
 
 ```
 ## Step 7: Initiating a Transaction with Passport
 
-Create a component for initiating a transaction:
+Create a file Transaction.js in component folder for initiating a transaction:
 ```javascript
 // components/Transaction.js
-import { passportProvider, initiateTransaction } from "../lib/immutable";
+import { passportProvider, initiateTransaction } from "../lib/shubham";
 
 const Transaction = () => {
   const handleTransaction = async (data) => {
