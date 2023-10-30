@@ -5,7 +5,6 @@ const Transaction = () => {
     try {
       const transactionHash = await initiateTransaction({ data });
       console.log("Transaction Hash:", transactionHash);
-      // Handle the transaction response
     } catch (error) {
       console.error(error);
     }
