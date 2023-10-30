@@ -1,15 +1,12 @@
 // components/UserProfile.js
 import { passportInstance } from "../lib/immutable";
-import { useEffect } from "react"; // Keep the import of useEffect
-import { useEffectClient } from "next/client"; // Import useEffectClient
+import { useEffect } from "react"; 
+import { useEffectClient } from "next/client"; 
 
-/* use client */ // Mark the component as a client component
 
 const UserProfile = () => {
-  // Use React State instead of useState
   const [user, setUser] = React.useState(null);
 
-  // Use React useEffect for client components
   useEffectClient(() => {
     const fetchUser = async () => {
       try {
@@ -21,7 +18,7 @@ const UserProfile = () => {
     };
 
     fetchUser();
-  }, []); // Empty dependency array to run this effect once.
+  }, []); 
 
   return (
     <div>
