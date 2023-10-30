@@ -42,11 +42,6 @@ Before diving into the integration process, make sure you have the following pre
 
 1.Node.js, Next.js, Express.js, and npm: Ensure you have these dependencies installed and up to date on your system, as they are essential for building and running your application.
 
-```cmd
-npm install express --save
-npm install @imtbl/sdk --save
-```
-
 2.Immutable Developer Hub Account: You'll need an account registered on the Immutable Developer Hub to access the necessary resources and APIs for integration.
 
 ## 1. Creating a Simple Application  
@@ -86,8 +81,12 @@ This step involves:
 
 ## 3. Installing and Initializing the Passport Client
 
-Here, you'll delve into the technical aspects of integrating Immutable Passport into your application. This involves installing the required dependencies and initializing the Passport client. You'll gain a clear understanding of how to set up the client for secure authentication and authorization.
-
+Here, you'll delve into the technical aspects of integrating Immutable Passport into your application. This involves installing the required dependencies and initializing the Passport client. You'll gain a clear understanding of how to set up the client for secure authentication and authorization.   
+->Firstly Install the dependencies as required for this project.   
+```cmd
+npm install express --save
+npm install @imtbl/sdk --save  
+```   
 -> Now Navigate to lib directory and make a file name immutable.js if it is already then paste below code into it.   
 
 ```javascript
