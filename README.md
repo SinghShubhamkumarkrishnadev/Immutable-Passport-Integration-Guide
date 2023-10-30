@@ -124,6 +124,7 @@ const fetchAuth = async () => {
     console.log(accounts);
   } catch (error) {
     console.log(error);
+ res.status(500).json({ error: 'An error occurred while Loging the  user.' });
   }
 };
 ```
