@@ -88,6 +88,8 @@ This step involves:
 
 Here, you'll delve into the technical aspects of integrating Immutable Passport into your application. This involves installing the required dependencies and initializing the Passport client. You'll gain a clear understanding of how to set up the client for secure authentication and authorization.
 
+-> Now Navigate to lib directory and make a file name immutable.js if it is already then paste below code into it.   
+
 ```javascript
 import { config, passport } from "@imtbl/sdk";
 import { ethers } from "ethers";
@@ -102,7 +104,11 @@ const passportInstance = new passport.Passport(passportConfig);
 const passportProvider = passportInstance.connectEvm();
 ```
 
-## 4. Logging in a User with Passport
+-> Now,Make a new folder ***components*** into root directory of your project.
+
+## 4. Logging in a User with Passport  
+
+Here , Make a file LoginButton.js into your components folder and paste the below code into it.
 
 This step is critical for enhancing user security. You'll be provided with detailed code snippets to securely log in a user using Immutable Passport. The code example demonstrates how to establish a secure connection and authenticate a user.
 
@@ -124,6 +130,7 @@ const fetchAuth = async () => {
 
 ## 5. Displaying User Information
 
+Here, Make a file UserProfile.js into your components folder and paste below code into it.
 In this section, you'll learn how to retrieve and display essential user information, including the ID token and access token, on your application. This step is crucial for providing a user-friendly experience while maintaining robust security.
 
 ```javascript
@@ -142,8 +149,10 @@ const fetchUser = async () => {
 };
 ```
 
-## 6. Logging Out a User
+## 6. Logging Out a User  
 
+ Here, Make a file LogoutButton.js into your components folder and paste below code into it.   
+ 
 Security doesn't end with login; it's also about logout. You'll be provided with code examples demonstrating how to securely log out a user, ensuring their session is terminated appropriately.
 
 ```javascript
@@ -154,7 +163,9 @@ const handleLogout = () => {
 };
 ```
 
-## 7. Initiating a Transaction from Passport
+## 7. Initiating a Transaction from Passport  
+
+Here, Make a file Transaction.js into your components folder and paste below code into it.
 
 Gaming applications often involve in-game purchases and transactions. In this section, you'll understand how to initiate transactions using Passport. You'll learn how to provide the necessary transaction data and parameters, such as sending a placeholder string and obtaining the transaction hash.
 
