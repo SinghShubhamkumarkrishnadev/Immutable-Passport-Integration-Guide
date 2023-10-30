@@ -142,9 +142,14 @@ const fetchUser = async () => {
     const accessToken = await passportInstance.getAccessToken();
     const idToken = await passportInstance.getIdToken();
 
-    // Display user information on your app
+      res.json({
+      userProfile,
+      accessToken,
+      idToken,
+    });
   } catch (error) {
     console.log(error);
+ res.status(500).json({ error: 'An error occurred while fetching user information.' });
   }
 };
 ```
@@ -175,8 +180,10 @@ import { passportProvider, initiateTransaction } from "@/lib/immutable";
 const handleTransaction = async (data) => {
   try {
     const transactionHash = await initiateTransaction({ data });
-  } catch (error) {
+    res.json({ transactionHash });
+} catch (error) {
     console.error(error);
+res.status(500).json({ error: 'An error occurred while initiating the transaction.' });
   }
 };
 ```
