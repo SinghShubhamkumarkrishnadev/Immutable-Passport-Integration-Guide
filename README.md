@@ -42,6 +42,11 @@ Before diving into the integration process, make sure you have the following pre
 
 1.Node.js, Next.js, Express.js, and npm: Ensure you have these dependencies installed and up to date on your system, as they are essential for building and running your application.
 
+```cmd
+npm install express --save
+npm install @imtbl/sdk --save
+```
+
 2.Immutable Developer Hub Account: You'll need an account registered on the Immutable Developer Hub to access the necessary resources and APIs for integration.
 
 ## 1. Creating a Simple Application  
@@ -55,7 +60,8 @@ cd shubham-immutable-app
 
 2.Cloning a Pre-built Application: Alternatively, you can clone a pre-built application repository, which comes with the essential components for Immutable Passport integration. This option can save you time and effort and is particularly useful if you're looking for a quick start.
 ```cmd
-
+git clone <repository URL>
+cd repository_name
 ```
 
 Whichever option you choose, it's crucial to ensure that your application is correctly set up and running smoothly.
