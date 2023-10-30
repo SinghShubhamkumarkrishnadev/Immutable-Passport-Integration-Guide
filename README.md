@@ -31,7 +31,7 @@ This guide will walk you through the process of integrating Immutable Passport i
 
 Before you begin, make sure you have the following:
 
-- Node.js,next.js and npm installed on your machine.
+- Node.js,next.js,express.js and npm installed on your machine.
 - An Immutable Developer Hub account.
 - Your application's repository or a new application project.
 
@@ -62,10 +62,17 @@ cd your-existing-app
 This will clone a folder namely your-existing-app 
 
 ### Initialize next.js in Your Application 
+Now,firstly we will create a file .env into the root directory and paste the below code into it:   
 
+```cmd
+IMMUTABLE_CLIENT_ID:"REPLACE_WITH_YOUR_IMMUTABLE_PASSPORT_CLIENT_ID";
+```
+// Don't worry if you don't have CLIENT_ID right now you will get it on step 2.
+  
 Now, create a new file in the project's lib directory called shubham.js. This file will contain the configuration and initialization code for the Passport client.
 
-->Below is the working code. Copy and paste it into shubham.js file.
+->Below is the working code. Copy and paste it into shubham.js file.     
+
 
 ```javascript
    const express = require('express');
@@ -84,9 +91,9 @@ const passportProvider = passportInstance.connectEvm();
 
 export { passportInstance, passportProvider };
 ```
-->This is the root file for your project where all information is stored.
-->Make sure to replace your callbackUri and logoutUri correctly same as in immutable project directory which is given below in step 2.
-->You can add your error handling code in this file as per your need/requirement.
+->This is the root file for your project where all information is stored.    
+->Make sure to replace your callbackUri and logoutUri correctly same as in immutable project directory which is given below in step 2.    
+->You can add your error handling code in this file as per your need/requirement.     
 
 ## Step 2: Registering Your Application on Immutable Developer Hub
 
@@ -109,15 +116,16 @@ npm install @imtbl/sdk ethers
 ```
 ## Create A component folder within root directory
 
-->Creating a component folder is not necessary but is a good practise to seperate your files as per need.
-->This is the required folder where we will put our all files.
-->Make sure to name it correctly to use it later.
+->Creating a component folder is not necessary but is a good practise to seperate your files as per need.    
+->This is the required folder where we will put our all files.    
+->Make sure to name it correctly to use it later.    
+
 
 ## Step 4: Logging In a User with Passport
 
- In a component folder create a Login.js file for login function:
- ->This is the file where we will write the code for our login credentials.
- ->Copy the below code and paste it into your Login.js file.
+ In a component folder create a Login.js file for login function:   
+ ->This is the file where we will write the code for our login credentials.    
+ ->Copy the below code and paste it into your Login.js file.    
        
    ```javascript
 //component/Login.js
@@ -145,9 +153,9 @@ export default Login;
 ```
 ## Step 5: Displaying User Information
 
-Create a file UserProfile.js in component folder for displaying user information:
- ->This is the file where we will write the code to disaplay user informations.
- ->Copy the below code and paste it into your UserProfile.js file.
+Create a file UserProfile.js in component folder for displaying user information:    
+ ->This is the file where we will write the code to disaplay user informations.    
+ ->Copy the below code and paste it into your UserProfile.js file.    
 
   ```javascript
 // components/UserProfile.js
@@ -188,9 +196,9 @@ export default UserProfile;
 
 ```
 ## Step 6: Logging Out a User
-
-  Create a file logout.js file in component folder for logging out: This route can clear the user's session or token:
-  ->This route can clear the user's session or token:
+ 
+  Create a file logout.js file in component folder for logging out: This route can clear the user's session or token:     
+  ->This route can clear the user's session or token:      
 ```javascript
 // components/Logout.js
 import { passportInstance } from "../lib/shubham";
@@ -210,9 +218,9 @@ export default Logout;
 ```
 ## Step 7: Initiating a Transaction with Passport
 
-Create a file Transaction.js in component folder for initiating a transaction:
- ->This is the file where we will write the code for the transaction in passport.
- ->Copy the below code and paste it into your Transaction.js file.
+Create a file Transaction.js in component folder for initiating a transaction:       
+ ->This is the file where we will write the code for the transaction in passport.      
+ ->Copy the below code and paste it into your Transaction.js file.      
 ```javascript
 // components/Transaction.js
 import { passportProvider, initiateTransaction } from "../lib/shubham";
