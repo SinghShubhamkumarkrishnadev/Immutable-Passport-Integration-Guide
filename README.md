@@ -81,6 +81,8 @@ This step involves:
    ```
 
 4. add client ID to .env file `IMMUTABLE_CLIENT_ID="Client_ID"`
+ 
+5. If you still have any doublt kindly visit [https://www.immutable.com/products/passport]
 
 ## 3. Installing and Initializing the Passport Client
 
