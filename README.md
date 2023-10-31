@@ -193,10 +193,13 @@ res.status(500).json({ error: 'An error occurred while initiating the transactio
   }
 };
 ```
+#### If you encounter any error while compiling, you can make a route page (index.js) that contains all the function calling of basic files of components folder into it. Hope this can help you.    
+
+->If you encounter any other error please refer to full web app code given above.
 
 That's it! You've successfully integrated Immutable Passport into your application.
  
-### Conclusion  
+# Conclusion  
 By successfully integrating Immutable Passport into your gaming application, you not only enhance your users' experience but also fortify the security and trustworthiness of your platform. This blockchain-based authentication and authorization service provides a robust layer of protection and streamlines the user login and transaction processes. Your users can now enjoy a more secure and reliable gaming experience, thanks to the integration of Immutable Passport.
 
 In conclusion, Immutable Passport is a powerful tool that can elevate your gaming application to new heights of security and user experience. By following these steps, you'll be well-equipped to integrate this essential service and offer your users a gaming environment they can trust and enjoy.
