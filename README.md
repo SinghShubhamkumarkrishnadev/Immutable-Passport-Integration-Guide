@@ -46,6 +46,8 @@ Before diving into the integration process, make sure you have the following pre
 
 3. I hope that you have some basic knowledge of coding for this web app making journey.
 
+   # ~Let's Start Our Journey.
+
 ## 1. Creating a Simple Application  
 In this step, you have two options to choose from: You can either create a basic Next.js application from scratch, tailoring it to your specific needs, or you can clone a repository containing a pre-built application designed for use with Immutable Passport. Make sure that your application is correctly set up and running smoothly.
 
