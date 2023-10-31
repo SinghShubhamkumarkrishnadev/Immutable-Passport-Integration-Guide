@@ -1,6 +1,6 @@
 # Immutable Passport Integration Guide
 
-This comprehensive guide will explain how to seamlessly integrate Immutable Passport into your application. Immutable Passport is a blockchain-based authentication and authorization service tailored for gaming applications. By following these steps, you'll be able to enhance the security and functionality of your gaming application, ensuring your users' data and transactions are secure.
+This comprehensive guide will explain how to seamlessly integrate Immutable Passport into your application. Immutable Passport is a blockchain-based authentication and authorization service tailored for gaming applications. 
 
 
 ## Table of Contents
@@ -131,7 +131,8 @@ const fetchAuth = async () => {
 
 ## 5. Displaying User Information
 
-Here, Make a file UserProfile.js into your components folder and paste below code into it.
+Here, Make a file UserProfile.js into your components folder and paste below code into it.     
+
 In this section, you'll learn how to retrieve and display essential user information, including the ID token and access token, on your application. This step is crucial for providing a user-friendly experience while maintaining robust security.
 
 ```javascript
