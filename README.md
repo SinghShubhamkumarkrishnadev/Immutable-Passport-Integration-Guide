@@ -70,6 +70,7 @@ This step involves:
 2.Registering Your Application: To securely interact with Immutable Passport, you'll need to register your application on the Immutable Developer Hub. This registration process results in obtaining a client ID unique to your application, which is crucial for authentication and authorization.   
 
 3.Adding the Client ID to Your Application's .env File: To ensure secure communication, it's essential to add the obtained client ID to your application's .env file. This step facilitates easy reference and secure communication with the Passport service.
+So,make a file with .env extension and paste the below code.(Make sure to replace client_id with your actual id)
    
    ```cmd
    IMMUTABLE_CLIENT_ID="Your_Client_ID"
