@@ -204,3 +204,5 @@ By successfully integrating Immutable Passport into your gaming application, you
 
 In conclusion, Immutable Passport is a powerful tool that can elevate your gaming application to new heights of security and user experience. By following these steps, you'll be well-equipped to integrate this essential service and offer your users a gaming environment they can trust and enjoy.
 
+### Note*:    
+Here,some files are hidden like .env etc. 
